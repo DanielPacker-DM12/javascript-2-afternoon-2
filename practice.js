@@ -18,7 +18,9 @@ var arr = [10,20,30];
 */
 
 //Code Here
-
+function first(arr){
+  return arr[0]
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -33,7 +35,9 @@ var arr = [40,50,60];
 */
 
 //Code Here
-
+function last(arr){
+  return arr[2]
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -48,7 +52,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
-
+function looper(family){
+  for(let i = 0; i < family.length; i++){
+    alert(family[i])
+  }
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -63,7 +71,11 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 */
 
 //Code Here
-
+function reversedLooper(letters){
+  for (let i = letters.length - 1; i >= 0; i--){
+    alert(letters[i])
+  }
+}
 
 
 ////////// PROBLEM 5 //////////
@@ -78,7 +90,14 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+function evenFinder(nums){
+  evenArray = []
+  for(let i = 0; i < nums.length; i++){
+    if(nums[i] % 2 === 0){
+      evenArray.push(nums[i])
+    }
+  }return evenArray
+}
 
 
 ////////// EXTRA PRACTICE PROBLEMS BELOW //////////
@@ -95,9 +114,23 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+function divider(numbersArray){
+  evensArray = [];
+  oddsArray = [];
+  masterArray = [];
+  for(let i = 0; i < numbersArray.length; i++){
+    if(numbersArray[i] % 2 === 0){
+      evensArray.push(numbersArray[i])
+    } else {
+      oddsArray.push(numbersArray[i])
+    } 
+  }
+  masterArray.push(evensArray)
+  masterArray.push(oddsArray)
+  return masterArray
+}
 
-
-
+divider(numbersArray)
 ////////// PROBLEM 7 //////////
 
 // Do not edit the code below.
@@ -116,7 +149,10 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(arr){
+  return arr.includes(getRandomArbitrary())
+ 
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -128,13 +164,17 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 /*
   Here we're going to write a function that mimics going shopping and checking things off of our grocery list and adding new items to our list.
 
-  Write a function called removeItem that is given two arguments, the first is myGroceryList, and the second is an item to remove from myGroceryList. 
-  If the second argument (or the item to add or remove) matches an item in myGroceryList, remove that item from the your grocery list and return the new, updated grocery list.
+  Write a function called removeItem that is given two arguments, 
+  the first is myGroceryList, and the second is an item to remove from myGroceryList. 
+  If the second argument (or the item to add or remove) matches an item in myGroceryList, 
+  remove that item from the your grocery list and return the new, updated grocery list.
 
-  Once you do that, write another function called addItem that is given two arguments, the first is myGroceryList and the second is an item to add to your grocery list. 
+  Once you do that, write another function called addItem that is given two arguments, 
+  the first is myGroceryList and the second is an item to add to your grocery list. 
   In addItem add the item you passed in to myGroceryList then return the new, updated grocery list.
 
-  In both the removeItem function and the addItem function, you will also need to check for valid aurguments. SpecRunner will try to call your functions without passing in valid aurguments. 
+  In both the removeItem function and the addItem function, you will also need to check for valid aurguments. 
+  SpecRunner will try to call your functions without passing in valid aurguments. 
   When this happens, you will need to respond by returning an empty array.
 
   Here are some examples of calling your functions and what should be returned:
@@ -143,6 +183,25 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+function removeItem(myGroceryList, item){
+  for(let i = 0; i < myGroceryList.length; i++){
+  if(item === myGroceryList[i]){
+      myGroceryList.splice(i, 1)
+    }
+  }return myGroceryList
+}
+
+function addItem(myGroceryList, item){
+  if (myGroceryList.length === 0){
+    myGroceryList.push(item)
+  }
+  let placeholderArr = myGroceryList
+  for(let i = 0; i < myGroceryList.length; i++){
+    if(item !== myGroceryList[i]){
+      placeholderArr.push(item)
+    }
+  } return myGroceryList
+}
 
 
 
@@ -153,7 +212,12 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(arr){
+  array = []
+  for(let i = 1; i <= 215; i++){
+    array.push(i)
+  } return array
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -169,7 +233,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
+function addTen(numbers){
+  let newNumbers = [];
+  for(let i = 0; i < numbers.length; i++){
+    newNumbers.push(Number(numbers[i]))
+    newNumbers[i] += 10
+  }
+  return newNumbers
+}
 
 
 ////////// PROBLEM 11 //////////
@@ -194,7 +265,14 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function longer(arr1, arr2){
+    if(arr1 > arr2){
+      return arr1
+    } else {
+      return arr2
+    }
+  
+}
 
 
 /*
@@ -206,7 +284,13 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
-
+function both(arr1,arr2) {
+  var arr3 = arr1.concat(arr2);
+  arr3.filter(function(elem, pos) {
+return arr3.indexOf(elem) == pos;
+});
+  return arr3;
+}
 
 
 ////////// PROBLEM 12 //////////
@@ -246,7 +330,17 @@ var colt = {
 */
 
 //Code Here
+devMountainEmployees.push(tyler);
+devMountainEmployees.push(cahlan);
+devMountainEmployees.push(ryan);
+devMountainEmployees.push(colt);
 
+for(var i = 0; i < devMountainEmployees.length; i++){
+ if(devMountainEmployees[i].name === 'Cahlan'){
+ devMountainEmployees.splice(i,1);
+}
+}
+    
 
 
 /*
@@ -255,7 +349,32 @@ var colt = {
 */
 
 //Code Here
+var users = [];
 
+var user1 = {
+    name: 'Tyler McGinnis',
+    email: 'tylermcginnis33@gmail.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniateLoop'
+};
+var user2 = {
+    name: 'Pablo McGinnis',
+    email: 'tylermcginnis33@gmail.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniateLoop'
+};
+var user3 = {
+    name: 'Steve McGinnis',
+    email: 'tylermcginnis33@gmail.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniateLoop'
+};
+users.push(user1, user2, user3);
+console.log(users);
+
+users = users.filter(function(obj){
+  return obj.email !== 'tylermcginnis33@gmail.com';
+})
 
 
 ////////// PROBLEM 13 //////////
